@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from 'react'
-import { Moon, Sun, ShoppingCart, Search, User, ChevronRight } from 'lucide-react'
+import { Moon, Sun, ShoppingCart, Search, User, ChevronRight, Home } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import Link from 'next/link'
 
 export default function HomePage() {
   const [isDarkMode, setIsDarkMode] = useState(true)
@@ -24,6 +25,11 @@ export default function HomePage() {
             <a href="#" className={`hover:text-blue-400 transition-colors ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>Contact</a>
           </nav>
           <div className="flex items-center space-x-4">
+            <Link href="/">
+          <button className={`p-2 rounded-full hover:bg-gray-700 transition-colors ${isDarkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'}`}>
+              <Home size={20} />
+            </button>
+            </Link>
             <button className={`p-2 rounded-full hover:bg-gray-700 transition-colors ${isDarkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'}`}>
               <Search size={20} />
             </button>
